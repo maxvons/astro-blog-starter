@@ -1,8 +1,6 @@
 # 🚀 Astro Blog
 
-This is a simple Astro blog template created by [Maximilian von Stephanides](https://www.maximilian.no) with sensible defaults and DX improvements to get a new blog up and running quickly.
-
-The starting point for the template was created with the `create astro` setup wizard and the [blog template](https://astro.build/themes/details/blog/) that you can choose during configuration there.
+A simple Astro blog template created by [Maximilian von Stephanides](https://www.maximilian.no) with sensible defaults, DX improvements, and instructions to get a new blog up and running as quickly as possible.
 
 The template includes detailed instructions for getting started, customizing things to your liking, and eventually deploying the blog.
 
@@ -150,4 +148,4 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 
 ## Credit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+The starting point for the template was created with the `create astro` setup wizard and the [blog template](https://astro.build/themes/details/blog/) that you can choose during configuration there.

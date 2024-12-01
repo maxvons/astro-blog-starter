@@ -70,26 +70,7 @@ This will ensure that your files are formatted as you work on them when saving.
 
 In addition to the prettier dependency, I have added `husky` with a commit hook to support formatting staged files when committing. This ensures that only the files that were changed and are part of the commit are formatted before committing and eventually pushing the changes. This way you introduce less unformatted files in your codebase if you forget to run the formatting scripts before committing and pushing your changes.
 
-#### Removing formatting support
-
-If you want, you can of course remove either of these dependencies.
-
-**Removing Prettier**
-
-To remove the Prettier dependency, follow the steps below:
-
-1. Run `npm uninstall prettier prettier-plugin-astro`
-2. Delete the `.prettierrc.js` file
-3. Delete the `format` and `format-check` scripts from `package.json`
-4. Delete the contents of the `pre-commit` husky file
-
-**Removing Husky**
-
-To remove the Husky dependency, follow the steps below:
-
-1. Run `npm uninstall husky`
-2. Delete the `.husky` folder
-3. Delete the `prepare` script from `package.json`
+If you want, you can of course remove either of these dependencies. This is described in more detail in the "Misc. section".
 
 Features:
 
@@ -142,9 +123,28 @@ Commands are run from the root of the project:
 | `npm run format`          | Format all files using Prettier                  |
 | `npm run format-check`    | Check the formatting of all files using Prettier |
 
-## 👀 Want to learn more?
+## Misc
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Removing formatting dependencies
+
+If you for some reason don't want to have automatic formatting as part of your local development workflow or use something else for formatting and potentially linting, you can remove the formatting related dependencies.
+
+#### Removing Prettier
+
+To remove the Prettier dependency, follow the steps below:
+
+1. Run `npm uninstall prettier prettier-plugin-astro`
+2. Delete the `.prettierrc.js` file
+3. Delete the `format` and `format-check` scripts from `package.json`
+4. Delete the contents of the `pre-commit` husky file
+
+#### Removing Husky
+
+To remove the Husky dependency, follow the steps below:
+
+1. Run `npm uninstall husky`
+2. Delete the `.husky` folder
+3. Delete the `prepare` script from `package.json`
 
 ## Credit
 

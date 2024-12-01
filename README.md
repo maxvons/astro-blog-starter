@@ -1,6 +1,6 @@
 # 🚀 Astro Blog
 
-A simple Astro blog template created by [Maximilian von Stephanides](https://www.maximilian.no) with sensible defaults, DX improvements, and instructions to get a new blog up and running as quickly as possible.
+A simple Astro blog template with sensible defaults, DX improvements, and instructions to get a new blog up and running as quickly as possible.
 
 The template includes detailed instructions for getting started, customizing things to your liking, and eventually deploying the blog.
 

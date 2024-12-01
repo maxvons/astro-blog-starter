@@ -58,7 +58,7 @@ If you prefer to check which files are unformatted and formatting them yourself,
 npm run format-check
 ```
 
-If you use VS Code, I strongly suggest that you install the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and add a local `.vscode` folder with a `settings.json` file and add the following contents:
+If you use VS Code, I strongly suggest that you install the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and add a local `.vscode` folder with a `settings.json` file with the following contents:
 
 ```json
 {
@@ -68,7 +68,7 @@ If you use VS Code, I strongly suggest that you install the [Prettier extension]
 
 This will ensure that your files are formatted as you work on them when saving.
 
-In addition to the prettier dependency, I have added `husky` to support formatting staged files when committing.
+In addition to the prettier dependency, I have added `husky` with a commit hook to support formatting staged files when committing. This ensures that only the files that were changed and are part of the commit are formatted before committing and eventually pushing the changes. This way you introduce less unformatted files in your codebase if you forget to run the formatting scripts before committing and pushing your changes.
 
 #### Removing formatting support
 

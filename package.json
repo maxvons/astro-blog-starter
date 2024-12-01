@@ -1,6 +1,10 @@
 {
   "name": "astro-starter",
   "homepage": "https://github.com/maxvons/astro-starter",
+  "author": {
+    "name": "Maximilian von Stephanides",
+    "url": "http://maximilian.no"
+  },
   "type": "module",
   "version": "1.0.0",
   "license": "MIT",

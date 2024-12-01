@@ -1,4 +1,4 @@
-# Astro Starter Kit: Blog
+# 🚀 Astro Blog
 
 This is a simple Astro blog template created by [Maximilian von Stephanides](https://www.maximilian.no) with sensible defaults and DX improvements to get a new blog up and running quickly.
 

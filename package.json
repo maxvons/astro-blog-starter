@@ -1,7 +1,8 @@
 {
   "name": "astro-starter",
+  "homepage": "https://github.com/maxvons/astro-starter",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",

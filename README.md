@@ -81,9 +81,91 @@ Features:
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
 
-## 🚀 Project Structure
+## Styling setup
 
-Inside of your Astro project, you'll see the following folders and files:
+I prefer to style most of my Astro components using the `<style>` tag directly in the component. This keeps the styling code as close to the component and markup as possible while avoiding clutter in the markup through a ton of utility classes. This template has therefore been designed with this in mind. If you prefer a different setup—for example something like Tailwind CSS—you will need to configure that yourself.
+
+### Global styles
+
+There are some global styles that have been defined in `styles/global.css`.
+
+In my experience, the styling for header and text tags are mostly the same throughout the site unless you specifically want something else, so I have decided to style the most common header and text tags here. The same is true for anchor tags. I have also defined the styles for the universal background color and stuff like that.
+
+### Mixins
+
+In my experience, there are some CSS snippets/patterns that are used more than others—for example media queries and some layout styles. Instead of defining the same styling for each component, you can define something called a "mixin" where you put the relevant CSS and import it where you want to use it. This is basically to CSS what functions are for most programming languages—reusable logic that you can use multiple places.
+
+For this template, I have created a file called `mixins.css` where I have put some mixins that I deem useful and use often. For example common media queries and some layout patterns:
+
+```css
+@define-mixin tablet {
+  @media screen and (min-width: 768px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin desktop {
+  @media screen and (min-width: 1440px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+You can then import these mixins in other css files or directly in `style` tags part of Astro components. You can see the effect of mixins below.
+
+**Without mixin:**
+
+```css
+<style>
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 1440px) {
+      padding: 12px 16px
+  }
+</style>
+```
+
+**With mixin:**
+
+```css
+<style>
+  @import "src/styles/mixins.css";
+
+  padding: 8px 12px;
+  @mixin center;
+
+  @mixin desktop {
+    padding: 12px 16px
+  }
+</style>
+```
+
+Mixins are currently not natively supported by CSS, but a feature part of many CSS pre- or postprocessors, such as [Saas](https://sass-lang.com) or [PostCSS](https://postcss.org).
+
+Since [Astro comes with PostCSS included](https://docs.astro.build/en/guides/styling/#postcss), and I don't have any use for most of the Saas features, this template uses a PostCSS plugin called [`postcss-mixins`](https://www.npmjs.com/package/postcss-mixins). This has been added as a dev dependency and can be removed if you don't have any use for mixins.
+
+### Vendor prefixes
+
+In addition to `postcss-mixins`, the template includes the [PostCSS `autoprefixer` plugin](https://www.npmjs.com/package/autoprefixer). This plugin automatically adds [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) to your CSS, so you don't have to think about that. You just write CSS, and it will work across most browsers.
+
+`autoprefixer` uses data based on current browser popularity and property support to apply prefixes. In this template, this is defined using the `browserslist` property in `package.json` where I have decided to use the `defaults` value. This gives a reasonable configuration for most users. Feel free to change or remove this if you know what you're doing.
+
+### Adding support for Tailwind CSS
+
+TODO: Describe how to add support for Tailwind here.
+
+## Project Structure
+
+TODO: Briefly explain the project structure, including the various files and folders.
 
 ```text
 ├── public/
@@ -145,6 +227,15 @@ To remove the Husky dependency, follow the steps below:
 1. Run `bun uninstall husky`
 2. Delete the `.husky` folder
 3. Delete the `prepare` script from `package.json`
+
+### Removing styling dependencies
+
+If you for some reason don't want to use mixins or add vendor prefixes to your CSS, or you prefer some other setup for this, you can remove the PostCSS plugins by following the steps below:
+
+1. Run `npm uninstall postcss-mixins autoprefixer`
+2. Delete the `postcss.config.cjs` file
+3. Remove the `browserslist` array property from `package.json` (optional)
+4. Delete the `styles/mixins.css` file
 
 ## Credit
 

@@ -18,18 +18,18 @@ This repository has been initialized as a template repository, so to create your
 
 ### Installing dependencies and starting the blog
 
-For the purposes of this document, I will assume that you use `npm`.
+For the purposes of this document, I will assume that you use `bun`.
 
 First install the required dependencies:
 
 ```sh
-npm install
+bun install
 ```
 
 Then start and run the blog locally:
 
 ```sh
-npm run dev
+bun run dev
 ```
 
 This will start the local Astro dev server at `localhost:4321`.
@@ -49,13 +49,13 @@ The template includes support for both light and dark mode based on user prefere
 `prettier` has been added as a dev dependency for automatic formatting support. You can format all the applicable files in the project using the following command:
 
 ```sh
-npm run format
+bun run format
 ```
 
 If you prefer to check which files are unformatted and formatting them yourself, you can run:
 
 ```sh
-npm run format-check
+bun run format-check
 ```
 
 If you use VS Code, I strongly suggest that you install the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and add a local `.vscode` folder with a `settings.json` file with the following contents:
@@ -114,14 +114,14 @@ Commands are run from the root of the project:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-| `npm run format`          | Format all files using Prettier                  |
-| `npm run format-check`    | Check the formatting of all files using Prettier |
+| `bun install`             | Installs dependencies                            |
+| `bun run dev`             | Starts local dev server at `localhost:4321`      |
+| `bun run build`           | Build your production site to `./dist/`          |
+| `bun run preview`         | Preview your build locally, before deploying     |
+| `bun run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `bun run astro -- --help` | Get help using the Astro CLI                     |
+| `bun run format`          | Format all files using Prettier                  |
+| `bun run format-check`    | Check the formatting of all files using Prettier |
 
 ## Misc
 
@@ -133,7 +133,7 @@ If you for some reason don't want to have automatic formatting as part of your l
 
 To remove the Prettier dependency, follow the steps below:
 
-1. Run `npm uninstall prettier prettier-plugin-astro`
+1. Run `bun uninstall prettier prettier-plugin-astro`
 2. Delete the `.prettierrc.js` file
 3. Delete the `format` and `format-check` scripts from `package.json`
 4. Delete the contents of the `pre-commit` husky file
@@ -142,7 +142,7 @@ To remove the Prettier dependency, follow the steps below:
 
 To remove the Husky dependency, follow the steps below:
 
-1. Run `npm uninstall husky`
+1. Run `bun uninstall husky`
 2. Delete the `.husky` folder
 3. Delete the `prepare` script from `package.json`
 

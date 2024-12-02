@@ -275,6 +275,22 @@ If you for some reason don't want to use mixins or add vendor prefixes to your C
 3. Remove the `browserslist` array property from `package.json` (optional)
 4. Delete the `styles/mixins.css` file
 
+### Removing included fonts
+
+If you want to use different fonts than the ones that are included, you can remove them by following the steps below:
+
+#### Removing Inter
+
+1. Remove the Inter `@font-face` declarations in `styles/variable.css`
+2. Delete the `InterVariable.woff2` and `InterVariable-Italic.woff2` files
+3. Update the `--primary-font` CSS variable with your new font or something else
+
+#### Removing Bricolage Grotesque
+
+1. Remove the Bricolage Grotesque `@font-face` declarations in `styles/variable.css`
+2. Delete the `BricolageGrotesqueVariable.ttf` file
+3. Update the `--header-font` CSS variable with your new font or something else
+
 ## Credit
 
 The starting point for the template was created with the `create astro` setup wizard and the [blog template](https://astro.build/themes/details/blog/) that you can choose during configuration there.

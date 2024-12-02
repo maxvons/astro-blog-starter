@@ -4,6 +4,8 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import "variables.css";
+
 :root {
   --accent: #2337ff;
   --accent-dark: #000d8a;
@@ -30,7 +32,7 @@
   font-display: swap;
 }
 body {
-  font-family: "Atkinson", sans-serif;
+  font-family: var(--primary-font);
   margin: 0;
   padding: 0;
   text-align: left;
@@ -54,6 +56,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--header-font);
   margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
   line-height: 1.2;

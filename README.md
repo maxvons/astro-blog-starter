@@ -84,7 +84,7 @@ If you use VS Code, I strongly suggest that you install the [Prettier extension]
 
 This will ensure that your files are formatted as you work on them when saving.
 
-In addition to the prettier dependency, I have added `husky` with a commit hook to support formatting staged files when committing. This ensures that only the files that were changed and are part of the commit are formatted before committing and eventually pushing the changes. This way you introduce less unformatted files in your codebase if you forget to run the formatting scripts before committing and pushing your changes.
+In addition to the prettier dependency, I have added [`husky`](https://typicode.github.io/husky/) with a commit hook to support formatting staged files when committing. This ensures that only the files that were changed and are part of the commit are formatted before committing and eventually pushing the changes. This way you introduce less unformatted files in your codebase if you forget to run the formatting scripts before committing and pushing your changes.
 
 If you want, you can of course remove either of these dependencies. This is described in more detail in the "Misc. section".
 

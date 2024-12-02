@@ -243,6 +243,10 @@ Commands are run from the root of the project:
 | `bun run format`          | Format all files using Prettier                  |
 | `bun run format-check`    | Check the formatting of all files using Prettier |
 
+## Deploying your blog
+
+TODO: Explain how to deploy the blog
+
 ## Misc
 
 ### Removing formatting dependencies

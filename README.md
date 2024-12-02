@@ -52,6 +52,10 @@ This will start the local Astro dev server at `localhost:4321`.
 
 To view the blog in a browser, simply click the link in the terminal or input `localhost:4321` in the address field of your browser of choice.
 
+You should see something like this:
+
+![The Astro Blog running in the browser!](public/images/astro-blog.png)
+
 ## Features
 
 ### Supports light and dark mode

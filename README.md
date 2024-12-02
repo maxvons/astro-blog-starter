@@ -20,7 +20,23 @@ This repository has been initialized as a template repository, so to create your
 
 For the purposes of this document, I will assume that you use `bun`.
 
-First install the required dependencies:
+If you don't already have `bun` installed, you can install the latest version on the [Bun website](https://bun.sh).
+
+Assuming you use macOS, you can simply run the script below:
+
+```sh
+curl -fsSL https://bun.sh/install | bash
+```
+
+And then either restart your terminal or source your shell config file.
+
+For Zsh (macOS default):
+
+```sh
+source ~/.zshrc
+```
+
+Then navigate to the project root (where `package.json` is located) and install the required dependencies:
 
 ```sh
 bun install

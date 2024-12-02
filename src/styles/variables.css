@@ -22,6 +22,18 @@
   src: url("/fonts/BricolageGrotesqueVariable.ttf") format("truetype");
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #fff;
+  }
+}
+
 :root {
   --primary-font: "InterVariable", sans-serif;
   --header-font: "BricolageGrotesqueVariable", sans-serif;

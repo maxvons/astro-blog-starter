@@ -60,7 +60,11 @@ You should see something like this:
 
 ### Supports light and dark mode
 
-The template includes support for both light and dark mode based on user preferences through the `prefers-color-scheme` CSS media feature. All color customization options have been defined as CSS variables in `src/styles/global.css`, so you can just update these to match your preferred color scheme.
+The template includes support for both light and dark mode based on user preferences with the `prefers-color-scheme` CSS media feature.
+
+All color customization options have been defined as CSS variables in `src/styles/variables.css`, so you can just update these to match your preferred color scheme.
+
+Please note that the template currently doesn't support switching between light and dark mode, it is strictly based on what the user has set as their preference on the OS level. Support for dynamically toggling between them will be added soon.
 
 ### Fonts included
 

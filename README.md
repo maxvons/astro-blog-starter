@@ -58,7 +58,29 @@ To view the blog in a browser, simply click the link in the terminal or input `l
 
 The template includes support for both light and dark mode based on user preferences through the `prefers-color-scheme` CSS media feature. All color customization options have been defined as CSS variables in `src/styles/global.css`, so you can just update these to match your preferred color scheme.
 
-### Support for variable font files
+### Fonts included
+
+This template includes the following two fonts:
+
+- [Inter](https://rsms.me/inter/)
+- [Bricolage Grotesque](https://ateliertriay.github.io/bricolage/)
+
+Inter and Bricolage Grotesque are both very popular and available as [variable fonts](https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts) with [optical sizing](https://fonts.google.com/knowledge/glossary/optical_sizes) which means you can define whatever supported weight and font size you want, and the font will adapt to look as good as possible at that size.
+
+#### How to use the fonts
+
+Inter can be used for both headings and body text—especially since it was updated with optical sizing—however, I recommend using this font for body text and anything else that isn't headers.
+
+Bricolage Grotesque _can_ be used for both headings and body text, but I would recommend that you use this font for headings, as it can become a bit too distracting for body text—especially for a blog.
+
+I have defined the following CSS variables related to the fonts:
+
+- `--primary-font`
+- `--header-font`
+
+`--primary-font` has been configured to use the Inter variable font The intended usage is anything other than headers. You most likely won't need to define this for components since it will already be defined for most text styles in `global.css`.
+
+`--header-font` has been configured to use the Bricolage Grotesque variable font. The intended usage is headers.
 
 ### Automatic formatting
 

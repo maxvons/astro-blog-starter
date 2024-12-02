@@ -274,7 +274,7 @@ To remove the Husky dependency, follow the steps below:
 
 If you for some reason don't want to use mixins or add vendor prefixes to your CSS, or you prefer some other setup for this, you can remove the PostCSS plugins by following the steps below:
 
-1. Run `npm uninstall postcss-mixins autoprefixer`
+1. Run `bun uninstall postcss-mixins autoprefixer`
 2. Delete the `postcss.config.cjs` file
 3. Remove the `browserslist` array property from `package.json` (optional)
 4. Delete the `styles/mixins.css` file

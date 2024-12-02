@@ -42,7 +42,7 @@ Then navigate to the project root (where `package.json` is located) and install 
 bun install
 ```
 
-Then start and run the blog locally:
+Finally, start and run the blog locally:
 
 ```sh
 bun run dev
@@ -84,7 +84,7 @@ If you use VS Code, I strongly suggest that you install the [Prettier extension]
 
 This will ensure that your files are formatted as you work on them when saving.
 
-In addition to the prettier dependency, I have added [`husky`](https://typicode.github.io/husky/) with a commit hook to support formatting staged files when committing. This ensures that only the files that were changed and are part of the commit are formatted before committing and eventually pushing the changes. This way you introduce less unformatted files in your codebase if you forget to run the formatting scripts before committing and pushing your changes.
+In addition to the prettier dependency, I have added [`husky`](https://typicode.github.io/husky/) with a commit hook to support formatting staged files on commit. This ensures that only the files that were changed and are part of the commit are formatted before committing and eventually pushing the changes. This way you introduce less unformatted files in your codebase if you forget to run the formatting scripts before committing and pushing your changes.
 
 If you want, you can of course remove either of these dependencies. This is described in more detail in the "Misc. section".
 
@@ -99,7 +99,7 @@ Features:
 
 ## Styling setup
 
-I prefer to style most of my Astro components using the `<style>` tag directly in the component. This keeps the styling code as close to the component and markup as possible while avoiding clutter in the markup through a ton of utility classes. This template has therefore been designed with this in mind. If you prefer a different setup—for example something like Tailwind CSS—you will need to configure that yourself.
+I prefer to style most of my Astro components using the `<style>` tag directly in the component. This keeps the styles as close to the component and markup as possible while avoiding clutter in the markup through a ton of utility classes. This template has therefore been designed with this in mind. If you prefer a different setup—for example something like Tailwind CSS—you will need to configure that yourself. Please see the relevant section "Adding support for Tailwind CSS" if you want to do this.
 
 ### Global styles
 

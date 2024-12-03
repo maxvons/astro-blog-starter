@@ -3,7 +3,10 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<BaseLayout pageTitle={SITE_TITLE} pageDescription={SITE_DESCRIPTION}>
+<BaseLayout
+  metadata={{ title: SITE_TITLE, description: SITE_DESCRIPTION }}
+  pageTitle="Hello, Friend!"
+>
   <h1>Hello, Friend!</h1>
   <p>
     Welcome to Maximilian von Stephanides' <a

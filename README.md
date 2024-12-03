@@ -54,7 +54,7 @@ To view the blog in a browser, simply click the link in the terminal or input `l
 
 You should see something like this:
 
-![The Astro Blog running in the browser!](public/images/astro-blog.png)
+![The Astro Blog running in the browser!](public/images/astro-blog.jpg)
 
 ## Features
 
@@ -66,6 +66,64 @@ If you are using VS Code, I strongly suggest that you install the following exte
 
 - [MDX extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx): to enable syntax highlighting for MDX files and some other nice to have features
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint): to enable linting for markdown files, allowing for more consistent formatting and file structure.
+
+### SEO and social media sharing friendly
+
+This template is designed with SEO best practices in mind to help your blog be visible on Google and other search engines.
+
+Canonical URLs, OpenGraph data, and sitemap support ensure that your site is easily discoverable and optimized for sharing.
+
+#### Canonical URLs and OpenGraph data
+
+Canonical URLs prevent duplicate content issues by specifying the preferred URL for a given page, helping search engines identify the primary source of your content.
+
+This template ships with optional configuration options for OpenGraph data to improve your blog posts for social media sharing by enhancing your link previews with metadata like title, description, and images.
+
+This stuff has been configured in a standalone component `BaseHead.astro` that can be imported and used on your blog pages. Assuming you have a page `index.astro` that represents the landing page of your blog, you can use it like so:
+
+```js
+---
+import BaseHead from "@components/BaseHead.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="My blog" description="My blog description" />
+  </head>
+  <body>
+  <!-- Content -->
+  </body>
+</html>
+```
+
+If you want, you can also include an optional `image` property to specify the image that should be visible when sharing the page on social media or other sites:
+
+```js
+---
+import BaseHead from "@components/BaseHead.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="My blog" description="My blog description" image="/images/astro-blog.jpg" />
+  </head>
+  <body>
+  <!-- Content -->
+  </body>
+</html>
+```
+
+This way, your link preview will look something like this:
+
+![Astro blog link preview!](public/images/astro-blog.jpg)
+
+#### Sitemap support
+
+A Sitemap is an XML file that outlines all of the pages, videos, and files on your site. Search engines like Google read this file to crawl your site more efficiently. See [Google’s own advice on sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview) to learn more.
+
+This template ships with the [Astro sitemap integration](https://docs.astro.build/en/guides/integrations-guide/sitemap/) for automatically creating a sitemap file for your blog when building the project.
 
 ### Supports light and dark mode
 
@@ -131,8 +189,6 @@ Features:
 
 - ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
 - ✅ RSS Feed support
 
 ## Styling setup

@@ -22,19 +22,20 @@ const { class: className, ...rest } = Astro.props;
     background-color: var(--background-color-nav);
     width: var(--nav-width);
   }
-  .logo {
-    color: var(--text-color-title);
-    font-size: var(--font-size-logo);
 
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
   }
 
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .logo {
+    color: var(--text-color-title);
+    font-size: var(--font-size-logo);
   }
 
   .links {

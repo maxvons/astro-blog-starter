@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "@components/FormattedDate.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "src/consts";
+import BlogCard from "@components/BlogCard.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -13,18 +14,28 @@ const posts = (await getCollection("blog")).sort(
   metadata={{ title: SITE_TITLE, description: SITE_DESCRIPTION }}
   pageTitle="Blog"
 >
-  <ul>
+  <div class="posts">
     {
       posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}/`}>
-            <h2 class="title">{post.data.title}</h2>
-            <p class="date">
-              <FormattedDate date={post.data.pubDate} />
-            </p>
-          </a>
-        </li>
+        <BlogCard
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          href={`/blog/${post.slug}`}
+        />
       ))
     }
-  </ul>
+  </div>
 </BaseLayout>
+
+<style>
+  .posts {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--spacer-medium);
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>

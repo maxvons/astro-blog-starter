@@ -113,7 +113,9 @@
 
   /* Spacers */
   --spacer-very-large: 8rem;
+  --spacer-large-plus: 6rem;
   --spacer-large: 4rem;
+  --spacer-medium-plus: 3rem;
   --spacer-medium: 2rem;
   --spacer-small: 1rem;
   --spacer-very-small: 0.5rem;

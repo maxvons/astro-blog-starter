@@ -1,22 +1,44 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import FormattedDate from "@components/FormattedDate.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const newestPost = posts.length > 0 ? posts[0] : undefined;
 ---
 
 <BaseLayout
   metadata={{ title: SITE_TITLE, description: SITE_DESCRIPTION }}
   pageTitle="Hello, Friend!"
 >
-  <p>
-    Welcome to Maximilian von Stephanides' <a
-      href="https://github.com/maxvons/astro-blog-starter"
-      >Astro blog starter template</a
-    >
-    This template serves as a lightweight, minimally-styled starting point for anyone
-    looking to build a personal website, blog, or portfolio with Astro, and includes
-    detailed instructions for getting started and customizing things to your liking.
-  </p>
-  <p>Here are a few ideas on how to get started with the template:</p>
+  <div class="container">
+    {
+      newestPost && (
+        <div class="blog-container">
+          <h2 class="blog-title">{newestPost.data.title}</h2>
+          <p class="blog-date">
+            <FormattedDate date={newestPost.data.pubDate} />
+          </p>
+          <p class="blog-description">{newestPost.data.description}</p>
+        </div>
+      )
+    }
+    <p>
+      Welcome to Maximilian von Stephanides' <a
+        href="https://github.com/maxvons/astro-blog-starter"
+        >Astro blog starter template</a
+      >
+      This template serves as a lightweight, minimally-styled starting point for
+      anyone looking to build a personal website, blog, or portfolio with Astro,
+      and includes detailed instructions for getting started and customizing things
+      to your liking.
+    </p>
+    <p>Here are a few ideas on how to get started with the template:</p>
+  </div>
   <ul>
     <li>Edit this page in <code>src/pages/index.astro</code></li>
     <li>
@@ -47,9 +69,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <style>
   @import "@styles/mixins.css";
 
-  p {
-    font-size: var(--font-size-primary);
-    line-height: var(--line-height-text);
-    max-width: var(--max-width-text);
+  .container {
+    @mixin text-container var(--spacer-medium), var(--max-width-text);
+  }
+
+  .blog-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    border: var(--card-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacer-medium);
+  }
+
+  .blog-title {
+    font-size: var(--font-size-header);
+    margin-bottom: var(--spacer-very-small);
+  }
+
+  .blog-date {
+    color: var(--text-color-secondary);
+    margin-bottom: var(--spacer-small);
+    font-size: var(--font-size-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-uppercase);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .blog-description {
+    color: var(--text-color-primary);
   }
 </style>

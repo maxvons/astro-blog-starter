@@ -36,6 +36,9 @@
     --text-color-primary: #3d3d46;
     --text-color-secondary: #666666;
 
+    /* Border styles */
+    --card-border: 1px solid #d5d5d5;
+
     /* Misc. colors */
     --icon-color: #020012;
   }
@@ -55,6 +58,10 @@
     --text-color-primary: #ababab;
     --text-color-secondary: #777777;
 
+    /* Border styles */
+    --card-border: 1px solid #242424;
+    --border-radius: 20px;
+
     /* Misc. colors */
     --icon-color: #fff;
   }
@@ -69,7 +76,7 @@
 
   /* Font sizes */
   --font-size-title: 4rem;
-  --font-size-header: 2.5rem;
+  --font-size-header: 2rem;
   --font-size-logo: 1.875rem;
   --font-size-primary: 1.125rem;
   --font-size-secondary: 0.875rem;
@@ -82,6 +89,17 @@
     --font-size-secondary: 1.125rem;
   }
 
+  /* Letter spacing */
+  --letter-spacing-uppercase: 0.12em;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Line heights */
+  --line-height-header: 1;
+  --line-height-text: 1.5;
+
   /* Widths */
   --page-width: 90%;
   --nav-width: 90%;
@@ -92,14 +110,6 @@
     --nav-width: 90%;
     --max-width-text: 700px;
   }
-
-  /* Font weights */
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
-
-  /* Line heights */
-  --line-height-header: 1;
-  --line-height-text: 1.5;
 
   /* Spacers */
   --spacer-very-large: 8rem;

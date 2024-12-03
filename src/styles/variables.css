@@ -103,7 +103,7 @@
   /* Widths */
   --page-width: 90%;
   --nav-width: 90%;
-  --max-width-text: 500px;
+  --max-width-text: 600px;
 
   @mixin tablet {
     --page-width: 80%;

@@ -60,10 +60,7 @@ const includeImg = cover && coverAlt;
     flex-flow: column nowrap;
     width: var(--page-width);
     margin-bottom: var(--spacer-very-large);
-  }
-
-  article {
-    width: 100%;
+    max-width: var(--max-width-text);
   }
 
   .hero {
@@ -86,6 +83,10 @@ const includeImg = cover && coverAlt;
 
     > *:last-child {
       margin-bottom: 0;
+    }
+
+    p {
+      line-height: var(--line-height-text);
     }
   }
 

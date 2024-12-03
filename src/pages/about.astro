@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "src/consts";
 ---
 
 <BaseLayout
   metadata={{
-    title: "Maximilian von Stephanides",
-    description:
-      "Maximilian von Stephanides is a software engineer based in Oslo, Norway",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   }}
   pageTitle="About me"
 >

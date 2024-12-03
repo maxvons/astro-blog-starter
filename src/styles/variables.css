@@ -90,7 +90,7 @@
   @mixin tablet {
     --page-width: 80%;
     --nav-width: 90%;
-    --max-width-text: 750px;
+    --max-width-text: 700px;
   }
 
   /* Font weights */

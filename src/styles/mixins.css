@@ -21,5 +21,8 @@
   display: flex;
   flex-flow: column nowrap;
   gap: $gap;
-  max-width: $max-width;
+
+  p {
+    max-width: $max-width;
+  }
 }

@@ -4,28 +4,26 @@ import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import FormattedDate from "@components/FormattedDate.astro";
+import HeroImage from "@components/HeroImage.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, cover, coverAlt } =
+  Astro.props;
+
+const includeImg = cover && coverAlt;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={heroImage} />
+    <BaseHead title={title} description={description} image={cover?.src} />
   </head>
   <body>
     <Header class="header" />
     <main>
       <article>
-        {
-          heroImage && (
-            <div class="hero-image">
-              <img width={1020} height={510} src={heroImage} alt="" />
-            </div>
-          )
-        }
+        {includeImg && <HeroImage src={cover} alt={coverAlt} class="hero" />}
         <div class="title-container">
           <h1>{title}</h1>
           <div class="date">
@@ -58,26 +56,26 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   }
 
   main {
+    @mixin centered-container;
+    flex-flow: column nowrap;
+    width: var(--page-width);
     margin-bottom: var(--spacer-very-large);
   }
 
-  .hero-image {
+  article {
     width: 100%;
   }
 
-  .hero-image img {
-    display: block;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: var(--box-shadow);
+  .hero {
+    margin-bottom: var(--spacer-medium);
   }
 
   .prose {
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
       margin-top: var(--spacer-large);
       margin-bottom: var(--spacer-small);
     }
@@ -94,6 +92,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   .title-container {
     display: flex;
     flex-flow: column nowrap;
+    margin-bottom: var(--spacer-large);
 
     h1 {
       font-size: var(--font-size-title);
@@ -112,10 +111,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         font-style: italic;
       }
     }
-  }
-  .date {
-    margin-bottom: 0.5em;
-    color: rgb(var(--gray));
   }
 
   .header {

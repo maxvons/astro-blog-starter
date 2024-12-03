@@ -9,7 +9,7 @@ export default {
       },
     },
   ],
-  // Customize the options below to suit your preferences
+  // CUSTOM: Customize the options below to suit your preferences
   trailingComma: "es5",
   tabWidth: 2,
   semi: true,

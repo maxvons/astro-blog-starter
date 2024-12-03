@@ -7,7 +7,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   metadata={{ title: SITE_TITLE, description: SITE_DESCRIPTION }}
   pageTitle="Hello, Friend!"
 >
-  <h1>Hello, Friend!</h1>
   <p>
     Welcome to Maximilian von Stephanides' <a
       href="https://github.com/maxvons/astro-blog-starter"
@@ -44,3 +43,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     >.
   </p>
 </BaseLayout>
+
+<style>
+  @import "@styles/mixins.css";
+
+  p {
+    font-size: var(--font-size-primary);
+    line-height: var(--line-height-text);
+    max-width: var(--max-width-text);
+
+    @mixin tablet {
+      max-width: var(--max-width-text-desktop);
+    }
+  }
+</style>

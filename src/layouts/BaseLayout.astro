@@ -25,11 +25,38 @@ const { metadata, pageTitle } = Astro.props;
     />
   </head>
   <body>
-    <Header />
+    <Header class="header" />
     <main>
-      <h1>{pageTitle}</h1>
+      <h1 class="title">{pageTitle}</h1>
       <slot />
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  @import "@styles/mixins.css";
+
+  body {
+    @mixin centered-container;
+    flex-flow: column nowrap;
+    margin-top: var(--spacer-small);
+  }
+
+  .header {
+    margin-bottom: var(--spacer-medium);
+  }
+
+  main {
+    @mixin centered-container;
+    flex-flow: column nowrap;
+    width: var(--page-width);
+    margin-bottom: var(--spacer-large);
+  }
+
+  .title {
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    margin-bottom: var(--spacer-medium);
+  }
+</style>

@@ -58,6 +58,10 @@ You should see something like this:
 
 ## Features
 
+### 100/100 Lighthouse performance
+
+TODO: Verify and add info about this
+
 ### Markdown & MDX support
 
 This template ships with Markdown and MDX support already configured and ready to go using [Astro content collections](https://docs.astro.build/en/guides/content-collections/#querying-collections) and the [Astro MDX integration](https://docs.astro.build/en/guides/integrations-guide/mdx/), so you can write `.md` or `.mdx` files in the `src/content/blog` folder and Astro will automatically convert and render it to a nice blog post in HTML.
@@ -125,13 +129,13 @@ A Sitemap is an XML file that outlines all of the pages, videos, and files on yo
 
 This template ships with the [Astro sitemap integration](https://docs.astro.build/en/guides/integrations-guide/sitemap/) for automatically creating a sitemap file for your blog when building the project.
 
-### RSS Feed support
+### RSS feed support
 
 An RSS feed allows readers to subscribe to your blog and receive updates whenever new content is published.
 
 This template includes built-in RSS feed generation through the `@astrojs/rss` package, as defined in `src/pages/rss.xml.js`. The feed automatically compiles your blog posts into an XML file and exposes it as an endpoint on your deployed blog.
 
-### Supports light and dark mode
+### Light and dark mode support
 
 The template includes support for both light and dark mode based on user preferences with the `prefers-color-scheme` CSS media feature.
 
@@ -210,10 +214,6 @@ This will ensure that your files are formatted as you work on them when saving.
 In addition to the prettier dependency, I have added [`husky`](https://typicode.github.io/husky/) with a commit hook to support formatting staged files on commit. This ensures that only the files that were changed and are part of the commit are formatted before committing and eventually pushing the changes. This way you introduce less unformatted files in your codebase if you forget to run the formatting scripts before committing and pushing your changes.
 
 If you want, you can of course remove either of these dependencies. This is described in more detail in the "Misc. section".
-
-Features:
-
-- ✅ 100/100 Lighthouse performance
 
 ## Styling setup
 

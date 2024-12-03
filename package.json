@@ -23,6 +23,7 @@
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^4.16.16",
+    "astro-icon": "^1.1.4",
     "typescript": "^5.7.2"
   },
   "devDependencies": {

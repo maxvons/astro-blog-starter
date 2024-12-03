@@ -23,6 +23,7 @@ const newestPost = posts.length > 0 ? posts[0] : undefined;
           title={newestPost.data.title}
           description={newestPost.data.description}
           pubDate={newestPost.data.pubDate}
+          href={`blog/${newestPost.slug}`}
         />
       )
     }

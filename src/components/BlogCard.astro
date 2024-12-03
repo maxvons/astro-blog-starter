@@ -5,27 +5,29 @@ interface Props {
   title: string;
   description: string;
   pubDate: Date;
+  href: string;
 }
 
-const { title, description, pubDate } = Astro.props;
+const { title, description, pubDate, href } = Astro.props;
 ---
 
-<div class="blog-container">
+<a href={href} class="blog-card">
   <h2 class="blog-title">{title}</h2>
   <p class="blog-date">
     <FormattedDate date={pubDate} />
   </p>
   <p class="blog-description">{description}</p>
-</div>
+</a>
 
 <style>
-  .blog-container {
+  .blog-card {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
     border: var(--card-border);
     border-radius: var(--border-radius);
     padding: var(--spacer-medium);
+    text-decoration: none;
   }
 
   .blog-title {

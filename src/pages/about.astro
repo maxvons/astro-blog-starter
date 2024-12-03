@@ -1,0 +1,48 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  metadata={{
+    title: "Maximilian von Stephanides",
+    description:
+      "Maximilian von Stephanides is a software engineer based in Oslo, Norway",
+  }}
+  pageTitle="About me"
+>
+  <div class="text-container">
+    <p>
+      Maximilian von Stephanides is a software engineer in Oslo, Norway,
+      specializing in building scalable microservices with Node.js and
+      TypeScript. He excels in fintech, creating secure and user-friendly
+      payment systems backed by Postgres and rigorous testing with tools like
+      Jest and Cucumber. Known for his attention to detail, Maximilian enjoys
+      mentoring and engaging with Oslo's tech community to share his expertise.
+    </p>
+    <p>
+      Outside work, Maximilian is a dedicated powerlifter, continually pushing
+      his limits in pursuit of new records. He balances his professional life
+      with hobby projects, exploring entrepreneurial ventures to build impactful
+      digital products. Inspired by Oslo's mix of natural beauty and urban life,
+      he merges his love for structure in both code and personal development.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  @import "@styles/mixins.css";
+
+  .text-container {
+    @mixin text-container var(--spacer-small), var(--max-width-text);
+  }
+
+  p {
+    font-size: var(--font-size-primary);
+    line-height: var(--line-height-text);
+    max-width: var(--max-width-text);
+
+    @mixin tablet {
+      max-width: var(--max-width-text-desktop);
+    }
+  }
+</style>

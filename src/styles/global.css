@@ -14,17 +14,18 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+  font-family: var(--header-font);
   color: var(--text-color-title);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-header);
+  margin: 0;
 }
 
 p {
   font-size: var(--font-size-primary);
-  margin: 0;
   line-height: var(--line-height);
   max-width: var(--max-width-text);
+  margin: 0;
 }
 
 a {

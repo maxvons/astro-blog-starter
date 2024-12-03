@@ -1,6 +1,5 @@
 ---
 import { SITE_TITLE } from "../consts";
-import { Icon } from "astro-icon/components";
 
 const { class: className, ...rest } = Astro.props;
 ---
@@ -8,13 +7,9 @@ const { class: className, ...rest } = Astro.props;
 <header class={className} {...rest}>
   <nav>
     <h2 class="logo"><a href="/">{SITE_TITLE}</a></h2>
-    <div class="social-links">
-      <a href="https://x.com/maximilianvons" target="_blank">
-        <Icon name="brand-x" class="icon" />
-      </a>
-      <a href="https://github.com/maxvons" target="_blank">
-        <Icon name="brand-github" class="icon" />
-      </a>
+    <div class="links">
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
     </div>
   </nav>
 </header>
@@ -42,14 +37,8 @@ const { class: className, ...rest } = Astro.props;
     justify-content: space-between;
   }
 
-  .social-links {
+  .links {
     display: flex;
     gap: var(--spacer-small);
-  }
-
-  .icon {
-    color: var(--icon-color);
-    height: 32px;
-    width: 32px;
   }
 </style>

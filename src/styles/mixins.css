@@ -16,3 +16,10 @@
   align-items: center;
   border: 1px solid red;
 }
+
+@define-mixin text-container $gap, $max-width {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $gap;
+  max-width: $max-width;
+}

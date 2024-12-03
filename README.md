@@ -58,6 +58,15 @@ You should see something like this:
 
 ## Features
 
+### Markdown & MDX support
+
+This template ships with Markdown and MDX support already configured and ready to go using [Astro content collections](https://docs.astro.build/en/guides/content-collections/#querying-collections) and the [Astro MDX integration](https://docs.astro.build/en/guides/integrations-guide/mdx/), so you can write `.md` or `.mdx` files in the `src/content/blog` folder and Astro will automatically convert and render it to a nice blog post in HTML.
+
+If you are using VS Code, I strongly suggest that you install the following extensions:
+
+- [MDX extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx): to enable syntax highlighting for MDX files and some other nice to have features
+- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint): to enable linting for markdown files, allowing for more consistent formatting and file structure.
+
 ### Supports light and dark mode
 
 The template includes support for both light and dark mode based on user preferences with the `prefers-color-scheme` CSS media feature.
@@ -125,7 +134,6 @@ Features:
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
 - ✅ Sitemap support
 - ✅ RSS Feed support
-- ✅ Markdown & MDX support
 
 ## Styling setup
 

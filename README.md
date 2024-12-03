@@ -125,11 +125,37 @@ A Sitemap is an XML file that outlines all of the pages, videos, and files on yo
 
 This template ships with the [Astro sitemap integration](https://docs.astro.build/en/guides/integrations-guide/sitemap/) for automatically creating a sitemap file for your blog when building the project.
 
+### RSS Feed support
+
+An RSS feed allows readers to subscribe to your blog and receive updates whenever new content is published.
+
+This template includes built-in RSS feed generation through the `@astrojs/rss` package, as defined in `src/pages/rss.xml.js`. The feed automatically compiles your blog posts into an XML file and exposes it as an endpoint on your deployed blog.
+
 ### Supports light and dark mode
 
 The template includes support for both light and dark mode based on user preferences with the `prefers-color-scheme` CSS media feature.
 
 All color customization options have been defined as CSS variables in `src/styles/variables.css`, so you can just update these to match your preferred color scheme.
+
+This template uses the following pattern for defining light and dark mode colors and other styling properties:
+
+```css
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #000;
+  }
+}
+```
+
+This means you have to define each variable twice, but when using it, you don't need to think about if light or dark mode is enabled—you simply use the `--background-color` variable and it will automatically reference the light or dark mode value based on user preferences.
+
+I prefer this pattern because you have to define a value for light and dark mode anyway (define the same variable twice) and then you simply use all the variables as you would otherwise.
 
 Please note that the template currently doesn't support switching between light and dark mode, it is strictly based on what the user has set as their preference on the OS level. Support for dynamically toggling between them will be added soon.
 
@@ -187,9 +213,7 @@ If you want, you can of course remove either of these dependencies. This is desc
 
 Features:
 
-- ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
-- ✅ RSS Feed support
 
 ## Styling setup
 
@@ -200,6 +224,26 @@ I prefer to style most of my Astro components using the `<style>` tag directly i
 There are some global styles that have been defined in `styles/global.css`.
 
 In my experience, the styling for header and text tags are mostly the same throughout the site unless you specifically want something else, so I have decided to style the most common header and text tags here. The same is true for anchor tags. I have also defined the styles for the universal background color and stuff like that.
+
+### CSS variables
+
+In my experience, CSS variables are extremely useful because they allow you to define all the colors, font sizes, shadows, border radius, spacers etc. in one place and reference them wherever you need them later. This reduces the choices you have to make when styling components and makes your design look much more consistent and polished.
+
+As an example, a rule of thumb for good design is that you want to want to use as few font sizes as possible, so defining the few font sizes you want to use as CSS variables and referencing them throughout your pages and components allows you to stick to this principle and makes your final design look better.
+
+This template ships with the most common CSS variables I use for all my projects when styling pages and components. This includes values for things like:
+
+- Font styles:
+  - Font families
+  - Font weights
+  - Font sizes
+- Colors:
+  - Background colors
+  - Primary color and variations
+  - Secondary color and variations
+  - Border colors
+  - ...
+- ...
 
 ### Mixins
 

@@ -56,6 +56,24 @@ You should see something like this:
 
 ![The Astro Blog running in the browser!](public/images/astro-blog.jpg)
 
+### Adding your first blog post
+
+Blog posts are written in Markdown or [MDX](https://mdxjs.com) and stored as collection entries in the `src/content/blog` [Astro content collection](https://docs.astro.build/en/guides/content-collections/).
+
+Assuming you want to add a new blog post `blog-post.md`, you can follow the steps below:
+
+1. Create a new file `blog-post.md` in the `src/content/blog` folder, so the final path is `src/content/blog/blog-post.md`.
+2. Add the required [frontmatter](https://frontmatter.codes/docs/markdown) and whatever content you want.
+3. Your blog post will now be available at `url/blog/blog-post/`
+
+Please note that the following frontmatter properties are required as defined in `src/content/config.ts`:
+
+- `title`
+- `description`
+- `pubDate`
+
+This means that all the markdown files you write and put in `src/content/blog` need to include these properties as part of their frontmatter, unless you modify `src/content/config.ts` with a different schema.
+
 ## Features
 
 ### 100/100 Lighthouse performance

@@ -23,7 +23,6 @@ const includeImg = cover && coverAlt;
     <Header class="header" />
     <main>
       <article>
-        {includeImg && <HeroImage src={cover} alt={coverAlt} class="hero" />}
         <div class="title-container">
           <h1>{title}</h1>
           <div class="date">
@@ -37,6 +36,7 @@ const includeImg = cover && coverAlt;
             }
           </div>
         </div>
+        {includeImg && <HeroImage src={cover} alt={coverAlt} class="hero" />}
         <div class="prose">
           <slot />
         </div>
@@ -63,11 +63,10 @@ const includeImg = cover && coverAlt;
     max-width: var(--max-width-text);
   }
 
-  .hero {
-    margin-bottom: var(--spacer-medium);
-  }
-
   .prose {
+    > :first-child {
+      margin-top: var(--spacer-large);
+    }
     > h2,
     > h3,
     > h4,
@@ -93,7 +92,7 @@ const includeImg = cover && coverAlt;
   .title-container {
     display: flex;
     flex-flow: column nowrap;
-    margin-bottom: var(--spacer-large);
+    margin-bottom: var(--spacer-medium);
 
     h1 {
       font-size: var(--font-size-title);

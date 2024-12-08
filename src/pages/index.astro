@@ -11,7 +11,7 @@ const posts = (await getCollection("blog")).sort(
 
 <BaseLayout
   metadata={{ title: SITE_TITLE, description: SITE_DESCRIPTION }}
-  pageTitle="Blog"
+  pageTitle="Maximilian's blog"
 >
   <div class="posts">
     {
@@ -32,6 +32,7 @@ const posts = (await getCollection("blog")).sort(
     display: flex;
     flex-flow: column nowrap;
     gap: var(--spacer-medium);
+    max-width: var(--max-width-text);
   }
 
   a {

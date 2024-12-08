@@ -1,7 +1,11 @@
 ---
-import { Icon } from "astro-icon/components";
+import IconLink from "./IconLink.astro";
 import Avatar from "@components/Avatar.astro";
 import XProfileImg from "@images/x-avatar.jpg";
+
+interface Props {
+  class: string;
+}
 
 const { class: className, ...rest } = Astro.props;
 ---
@@ -16,45 +20,53 @@ const { class: className, ...rest } = Astro.props;
       />
     </a>
     <div class="links">
-      <a href="https://x.com/maximilianvons" target="_blank">
-        <Icon name="brand-x" class="icon" />
-      </a>
+      <IconLink
+        url="https://x.com/maximilianvons"
+        icon="brand-x"
+        newTab
+        class="icon"
+      />
     </div>
-
-    <style>
-      @import "@styles/mixins.css";
-
-      header {
-        margin: 0;
-        background-color: var(--background-color-nav);
-        width: var(--nav-width);
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        color: var(--text-color-title);
-        font-size: var(--font-size-logo);
-      }
-
-      .links {
-        display: flex;
-        gap: var(--spacer-small);
-      }
-
-      .icon {
-        color: var(--icon-color);
-        height: 32px;
-        width: 32px;
-      }
-    </style>
   </nav>
 </header>
+
+<style>
+  @import "@styles/mixins.css";
+
+  header {
+    margin: 0;
+    background-color: var(--background-color-nav);
+    width: var(--nav-width);
+    border: var(--nav-border);
+    border-radius: var(--border-radius-rounded);
+    padding: 0 var(--spacer-small) 0 0;
+    max-width: var(--max-width-nav);
+    box-sizing: border-box; /* Include padding in the element's total width */
+    position: sticky;
+    top: 32px;
+    backdrop-filter: blur(8px);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .links {
+    display: flex;
+    gap: var(--spacer-small);
+  }
+
+  .icon {
+    padding: 12px 0 8px 0;
+
+    [data-icon] {
+      font-size: 32px;
+    }
+  }
+</style>

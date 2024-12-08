@@ -52,7 +52,7 @@ const includeImg = cover && coverAlt;
   body {
     @mixin centered-container;
     flex-flow: column nowrap;
-    margin-top: var(--spacer-small);
+    margin-top: 0;
   }
 
   main {
@@ -115,6 +115,10 @@ const includeImg = cover && coverAlt;
   }
 
   .header {
-    margin-bottom: var(--spacer-medium);
+    margin-bottom: var(--spacer-large);
+
+    @mixin tablet {
+      margin-bottom: var(--spacer-very-large);
+    }
   }
 </style>

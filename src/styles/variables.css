@@ -27,7 +27,7 @@
   :root {
     /* Background colors */
     --background-color: #fff;
-    --background-color-nav: #fff;
+    --background-color-nav: rgb(255 255 255 / 70%);
     --background-color-footer: #fff;
 
     /* Text colors */
@@ -37,7 +37,8 @@
     --text-color-secondary: #666666;
 
     /* Border styles */
-    --card-border: 1px solid #d5d5d5;
+    --border-color-card: #d5d5d5;
+    --border-color-nav: #d5d5d5;
 
     /* Misc. colors */
     --icon-color: #020012;
@@ -49,7 +50,7 @@
   :root {
     /* Background colors */
     --background-color: #000;
-    --background-color-nav: #000;
+    --background-color-nav: rgb(0 0 0 / 70%);
     --background-color-footer: #000;
 
     /* Text colors */
@@ -58,9 +59,9 @@
     --text-color-primary: #ababab;
     --text-color-secondary: #777777;
 
-    /* Border styles */
-    --card-border: 1px solid #242424;
-    --border-radius: 20px;
+    /* Border colors */
+    --border-color-card: #242424;
+    --border-color-nav: #242424;
 
     /* Misc. colors */
     --icon-color: #fff;
@@ -75,15 +76,14 @@
   font-optical-sizing: auto; /* This enables optical sizing for the variable fonts so they look as good as possible at all sizes */
 
   /* Font sizes */
-  --font-size-title: 4rem;
+  --font-size-title: 3rem;
   --font-size-header: 2rem;
   --font-size-logo: 1.875rem;
   --font-size-primary: 1.125rem;
   --font-size-secondary: 0.875rem;
 
   @mixin tablet {
-    --font-size-title: 6.25rem;
-    --font-size-header: 4rem;
+    --font-size-title: 4rem;
     --font-size-header: 2.5rem;
     --font-size-primary: 1.375rem;
     --font-size-secondary: 1.125rem;
@@ -100,6 +100,13 @@
   --line-height-header: 1;
   --line-height-text: 1.5;
 
+  /* Border styles */
+  --border-radius: 20px;
+  --border-radius-rounded: 100px;
+  --border-radius-round: 50%;
+  --card-border: 1px solid var(--border-color-card);
+  --nav-border: 1px solid var(--border-color-nav);
+
   /* Widths */
   --page-width: 90%;
   --nav-width: 90%;
@@ -109,6 +116,7 @@
     --page-width: 80%;
     --nav-width: 90%;
     --max-width-text: 700px;
+    --max-width-nav: 700px;
   }
 
   /* Spacers */
@@ -119,4 +127,7 @@
   --spacer-medium: 2rem;
   --spacer-small: 1rem;
   --spacer-very-small: 0.5rem;
+
+  /* Misc. */
+  --background-blur: 50%;
 }

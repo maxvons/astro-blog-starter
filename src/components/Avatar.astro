@@ -28,7 +28,7 @@ const getClassNames = (size: Props["size"]) => {
   @import "src/styles/mixins.css";
 
   .avatar {
-    border-radius: 50%;
+    border-radius: var(--border-radius-round);
     overflow: hidden;
     box-shadow: var(--shadow-avatar);
   }
@@ -40,13 +40,8 @@ const getClassNames = (size: Props["size"]) => {
   }
 
   .small {
-    height: 32px;
-    width: 32px;
-
-    @mixin tablet {
-      height: 48px;
-      width: 48px;
-    }
+    height: 48px;
+    width: 48px;
   }
 
   .medium {

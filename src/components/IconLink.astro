@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  url: string;
+  icon: string;
+  newTab?: boolean;
+  class?: string;
+}
+
+const { url, icon, newTab, class: className, ...rest } = Astro.props;
+
+const getTarget = () => {
+  return newTab ? "_blank" : "_self";
+};
+---
+
+<a class={className} href={url} target={getTarget()} {...rest}>
+  <Icon name={icon} />
+</a>
+
+<style>
+  @import "@styles/mixins.css";
+  [data-icon] {
+    color: var(--icon-color);
+    font-size: 32px;
+
+    @mixin tablet {
+      font-size: 32px;
+    }
+  }
+</style>

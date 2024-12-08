@@ -40,11 +40,14 @@ const { metadata, pageTitle } = Astro.props;
   body {
     @mixin centered-container;
     flex-flow: column nowrap;
-    margin-top: var(--spacer-small);
   }
 
   .header {
-    margin-bottom: var(--spacer-medium);
+    margin-bottom: var(--spacer-large);
+
+    @mixin tablet {
+      margin-bottom: var(--spacer-very-large);
+    }
   }
 
   main {

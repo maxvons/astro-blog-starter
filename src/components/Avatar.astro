@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  size: "SMALL" | "MEDIUM" | "LARGE";
+}
+
+const { src, alt, size } = Astro.props;
+
+const getClassNames = (size: Props["size"]) => {
+  const classes = [];
+
+  if (size === "SMALL") classes.push("small");
+  if (size === "MEDIUM") classes.push("medium");
+  if (size === "LARGE") classes.push("large");
+
+  return classes.join(" ");
+};
+---
+
+<div class:list={["avatar", getClassNames(size)]}>
+  <Image src={src} alt={alt} />
+</div>
+
+<style>
+  @import "src/styles/mixins.css";
+
+  .avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-avatar);
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .small {
+    height: 32px;
+    width: 32px;
+
+    @mixin tablet {
+      height: 48px;
+      width: 48px;
+    }
+  }
+
+  .medium {
+    height: 48px;
+    width: 48px;
+
+    @mixin tablet {
+      height: 64px;
+      width: 64px;
+    }
+  }
+
+  .large {
+    height: 64px;
+    width: 64px;
+
+    @mixin tablet {
+      height: 96px;
+      width: 96px;
+    }
+  }
+</style>

@@ -8,4 +8,7 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://example.com", // CUSTOM: Enter the URL of your deployed site here
   integrations: [mdx(), sitemap(), icon()],
+  redirects: {
+    "/blog": "/",
+  },
 });

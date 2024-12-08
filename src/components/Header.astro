@@ -1,45 +1,60 @@
 ---
-import { SITE_TITLE } from "../consts";
+import { Icon } from "astro-icon/components";
+import Avatar from "@components/Avatar.astro";
+import XProfileImg from "@images/x-avatar.jpg";
 
 const { class: className, ...rest } = Astro.props;
 ---
 
 <header class={className} {...rest}>
   <nav>
-    <h2 class="logo"><a href="/">{SITE_TITLE}</a></h2>
+    <a href="/"
+      ><Avatar
+        src={XProfileImg}
+        alt="Maximilian von Stephanides"
+        size="SMALL"
+      />
+    </a>
     <div class="links">
-      <a href="/blog">Blog</a>
-      <a href="/about">About</a>
+      <a href="https://x.com/maximilianvons" target="_blank">
+        <Icon name="brand-x" class="icon" />
+      </a>
     </div>
+
+    <style>
+      @import "@styles/mixins.css";
+
+      header {
+        margin: 0;
+        background-color: var(--background-color-nav);
+        width: var(--nav-width);
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        color: var(--text-color-title);
+        font-size: var(--font-size-logo);
+      }
+
+      .links {
+        display: flex;
+        gap: var(--spacer-small);
+      }
+
+      .icon {
+        color: var(--icon-color);
+        height: 32px;
+        width: 32px;
+      }
+    </style>
   </nav>
 </header>
-
-<style>
-  @import "@styles/mixins.css";
-
-  header {
-    margin: 0;
-    background-color: var(--background-color-nav);
-    width: var(--nav-width);
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    color: var(--text-color-title);
-    font-size: var(--font-size-logo);
-  }
-
-  .links {
-    display: flex;
-    gap: var(--spacer-small);
-  }
-</style>

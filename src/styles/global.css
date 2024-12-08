@@ -1,5 +1,9 @@
 @import "@styles/variables.css";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-size: var(--font-size-primary);
